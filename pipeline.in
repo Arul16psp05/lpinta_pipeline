@@ -1,0 +1,11 @@
+#Lpipeline.in
+#source_name    TimeStamp   C_Freq NChan   DM   Int_time nbins  fil_chan
+J1857+0943   B1855+09.070216.1280.30ns.pavb.raw.timestamp    1280.0    512  10  256  64
+J1939+2134   B1937+21.070216.1280.30ns.pavb.raw.timestamp    1280.0    512  10  256  64
+J1600-3053   J1600-3053.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J1643-1224   J1643-1224.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J1713+0747   J1713+0747.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J1909-3744   J1909-3744.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J2124-3358   J2124-3358.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J2145-0750   J2145-0750.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J2317+1439   J2317+1439.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
