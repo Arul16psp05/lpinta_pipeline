@@ -1,0 +1,165 @@
+06_03_2024
+
+07feb2016
+#Lpipeline.in
+#source_name    TimeStamp   C_Freq NChan   DM   Int_time nbins  fil_chan
+J1857+0943   B1855+09.070216.1280.30ns.pavb.raw.timestamp    1280.0    512  10  256  64
+J1939+2134   B1937+21.070216.1280.30ns.pavb.raw.timestamp    1280.0    512  10  256  64
+J1600-3053   J1600-3053.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J1643-1224   J1643-1224.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J1713+0747   J1713+0747.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J1909-3744   J1909-3744.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J2124-3358   J2124-3358.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J2145-0750   J2145-0750.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+J2317+1439   J2317+1439.070216.1280.30ns.pavb.raw.timestamp  1280.0    512  10  256  64
+
+
+python3 /home/inpta//Documents/LEGACY/test_fftw2/py_GSB2DAT/Lpinta_scripts/Lpinta_06_03_2024_with_singularity_pyGSB2DAT.py /media/inpta/C_INDPTA001/INDPTA001/data/INDPTA/29_064 /home/inpta/Documents/LEGACY/test_fftw2/Lpinta_results/run2
+ 
+ 
+07_03_2024
+ 
+#08mar2016
+#Lpipeline.in
+#source_name    TimeStamp                  C_Freq NChan   DM   Int_time nbins  fil_chan
+J1857+0943   B1855+09.080316.1280.30ns.pavb.dat.timestamp    1280.0    512  10  256  64
+J1939+2134   B1937+21.080316.1280.30ns.pavb.dat.timestamp    1280.0    512  10  256  64
+J1600-3053   J1600-3053.080316.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J1643-1224   J1643-1224.080316.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J1713+0747   J1713+0747.080316.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J1909-3744   J1909-3744.080316.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J2124-3358   J2124-3358.080316.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J2145-0750   J2145-0750.080316.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J2317+1439   J2317+1439.080316.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+
+ 
+Lpinta /media/inpta/C_INDPTA001/INDPTA001/data/INDPTA/29_064 /home/inpta/Documents/LEGACY/test_fftw2/Lpinta_results/run3
+
+#10jan2016
+#Lpipeline.in
+#source_name    TimeStamp                  C_Freq NChan   DM   Int_time nbins  fil_chan
+J1857+0943   B1855+09.100116.1292.30ns.pavb.timestamp        1292.0    512  10  256  64
+J1939+2134   B1937+21.100116.1292.30ns.pavb.timestamp        1292.0    512  10  256  64
+J1600-3053   J1600-3053.100116.1292.30ns.pavb.timestamp      1292.0    512  10  256  64
+J1643-1224   J1643-1224.100116.1292.30ns.pavb.timestamp      1292.0    512  10  256  64
+J1713+0747   J1713+0747.100116.1292.30ns.pavb.timestamp      1292.0    512  10  256  64
+J1909-3744   J1909-3744.100116.1292.30ns.pavb.timestamp      1292.0    512  10  256  64
+J2124-3358   J2124-3358.100116.1292.30ns.pavb.timestamp      1292.0    512  10  256  64
+J2145-0750   J2145-0750.100116.1292.30ns.pavb.timestamp      1292.0    512  10  256  64
+
+#19dec2015
+#Lpipeline.in
+#source_name    TimeStamp                  C_Freq NChan   DM   Int_time nbins  fil_chan
+J1857+0943   B1855+09.1280.30ns.pavb.dat.timestamp           1280.0    512  10  256  64
+J1939+2134   B1937+21.1280.30ns.pavb.dat.timestamp           1280.0    512  10  256  64
+J1713+0747   J1713+0747.1280.30ns.pavb.dat.timestamp         1280.0    512  10  256  64
+J1909-3744   J1909-3744.1280.30ns.pavb.dat.timestamp         1280.0    512  10  256  64
+J2124-3358   J2124-3358.1280.30ns.pavb.dat.timestamp         1280.0    512  10  256  64
+J2145-0750   J2145-0750.1280.30ns.pavb.dat.timestamp         1280.0    512  10  256  64
+J2317+1439   J2317+1439.1280.30ns.pavb.dat.timestamp         1280.0    512  10  256  64
+
+#21nov2015
+#Lpipeline.in
+#source_name    TimeStamp                  C_Freq NChan   DM   Int_time nbins  fil_chan
+J1857+0943   B1855+09.211115.1280.30ns.pavb.dat.timestamp    1280.0    512  10  256  64
+J1939+2134   B1937+21.211115.1280.30ns.pavb.dat.timestamp    1280.0    512  10  256  64
+J1600-3053   J1600-3053.211115.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J1643-1224   J1643-1224.211115.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J1713+0747   J1713+0747.211115.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J1909-3744   J1909-3744.211115.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J2124-3358   J2124-3358.211115.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J2145-0750   J2145-0750.211115.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+#J2317+1439   no timestamp file                              1280.0    512  10  256  64
+
+
+# 25apr2016    -prabu
+# Lpipeline.in
+# source_name    TimeStamp                  C_Freq NChan   DM   Int_time nbins  fil_chan
+J1857+0943   B1855+09.250416.1280.30ns.timestamp 	 1280.0    512  10  256  64
+J1939+2134   B1937+21.250416.1280.30ns.timestamp    1280.0    512  10  256  64
+
+
+# 25apr2016    -prabu
+# Lpipeline.in
+# source_name    TimeStamp                  C_Freq NChan   DM   Int_time nbins  fil_chan
+J1857+0943 	B1855+09.140516.1280.30ns.pavb.dat.timestamp
+J1939+2134   	B1937+21.140516.1280.30ns.pavb.dat.timestamp
+J1600-3053   	J1600-3053.140516.1280.30ns.pavb.dat.timestamp
+J1643-1224   	J1643-1224.140516.1280.30ns.pavb.dat.timestamp
+J1713+0747  	J1713+0747.140516.1280.30ns.pavb.dat.timestamp
+J1909-3744   	J1909-3744.140516.1280.30ns.pavb.dat.timestamp
+J2124-3358   	J2124-3358.140516.1280.30ns.pavb.dat.timestamp
+J2145-0750   	J2145-0750.140516.1280.30ns.pavb.dat.timestamp
+J2317+1439 	J2317+14392317+1439.140516.1280.30ns.pavb.dat.timestamp
+
+
+
+
+#04june2016_INPTA004 - Arul
+# Lpipeline.in
+#source_name    TimeStamp                                 C_Freq  NChan Int_time nbins  fil_chan
+J1857+0943   B1855+09.040616.1280.30ns.pavb.timestamp        1280.0    512  10  256  64
+J1939+2134   B1937+21.040616.1280.30ns.pavb.timestamp        1280.0    512  10  256  64
+J1600-3053   J1600-3053.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J1643-1224   J1643-1224.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J1713+0747   J1713+0747.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J1909-3744   J1909-3744.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J2124-3358   J2124-3358.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J2145-0750   J2145-0750.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J2317+1439   J2317+1439.100616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+
+#04june2016_INPTA004 - Arul
+# Lpipeline.in
+#source_name    TimeStamp                                 C_Freq  NChan Int_time nbins  fil_chan
+J1857+0943   B1855+09.040616.1280.30ns.pavb.timestamp        1280.0    512  10  256  64
+J1939+2134   B1937+21.040616.1280.30ns.pavb.timestamp        1280.0    512  10  256  64
+J1600-3053   J1600-3053.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J1643-1224   J1643-1224.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J1713+0747   J1713+0747.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J1909-3744   J1909-3744.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J2124-3358   J2124-3358.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J2145-0750   J2145-0750.040616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J2317+1439   J2317+1439.100616.1280.30ns.pavb.1.timestamp    1280.0    512  10  256  64
+
+#16jul16 - Arul
+# Lpipeline.in
+#source_name    TimeStamp                                 C_Freq  NChan Int_time nbins  fil_chan
+J1857+0943   B1855+09.160716.1280.30ns.pavb.dat.timestamp    1280.0    512  10  256  64
+J1939+2134   B1937+21.160716.1280.30ns.pavb.dat.timestamp    1280.0    512  10  256  64
+J1600-3053   J1600-3053.160716.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J1643-1224   J1643-1224.160716.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J1713+0747   J1713+0747.160716.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J1909-3744   J1909-3744.160716.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J2124-3358   J2124-3358.160716.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J2145-0750   J2145-0750.160716.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+J2317+1439   J2317+1439.160716.1280.30ns.pavb.dat.timestamp  1280.0    512  10  256  64
+
+#25jun16 - Arul
+# Lpipeline.in
+#source_name    TimeStamp                                 C_Freq  NChan Int_time nbins  fil_chan
+J1857+0943   B1855+09.250616.1280.30ns.pavb.timestamp        1280.0    512  10  256  64
+#J1939+2134   B1937+21.160716.1280.30ns.pavb.dat.timestamp   1280.0    512  10  256  64
+J1600-3053   J1600-3053.250616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J1643-1224   J1643-1224.250616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J1713+0747   J1713+0747.250616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J1909-3744   J1909-3744.250616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J2124-3358   J2124-3358.250616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J2145-0750   J2145-0750.250616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+J2317+1439   J2317+1439.250616.1280.30ns.pavb.timestamp      1280.0    512  10  256  64
+
+#30dec2017 - Arul
+# Lpipeline.in
+#source_name    TimeStamp                                 C_Freq  NChan Int_time nbins  fil_chan
+#J1857+0943   B1855+09.250616.1280.30ns.pavb.timestamp                1280.0    512  10  256  64
+J1939+2134   B1937+21.301217.30ns.pavb_30dec2017.raw.timestamp        1280.0    512  10  256  64
+J1600-3053   J1600-3053.301217.30ns.pavb_30dec2017.raw.timestamp      1280.0    512  10  256  64
+J1643-1224   J1643-1224.301217.30ns.pavb_30dec2017.raw.timestamp      1280.0    512  10  256  64
+J1713+0747   J1713+0747.301217.30ns.pavb_30dec2017.raw.timestamp      1280.0    512  10  256  64
+J1909-3744   J1909-3744.301217.30ns.pavb_30dec2017.raw.timestamp      1280.0    512  10  256  64
+J2124-3358   J2124-3358.301217.30ns.pavb_30dec2017.raw.timestamp      1280.0    512  10  256  64
+J2145-0750   J2145-0750.301217.30ns.pavb_30dec2017.raw.timestamp      1280.0    512  10  256  64
+J2317+1439   J2317+1439.301217.30ns.pavb_30dec2017.raw.timestamp      1280.0    512  10  256  64
+
+inpta@RRI-D-595:~/Documents/LEGACY/test_fftw2/py_GSB2DAT/Lpinta_scripts$ ls -la /usr/bin/Lpinta 
+lrwxrwxrwx 1 root root 87 Mar  7 07:36 /usr/bin/Lpinta -> /home/inpta//Documents/LEGACY/test_fftw2/py_GSB2DAT/Lpinta_scripts/Lpinta_07_03_2024.py
+

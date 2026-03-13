@@ -1,0 +1,136 @@
+#!/usr/bin/python3
+
+"""
+ GSB2DAT python version
+ Author Arul @ 04_03_2024
+ 
+ Ref: https://baseband.readthedocs.io/en/stable/gsb/index.html
+  
+ python script to convert GSB spectrum data to Timeseries data
+ 
+ # USAGE
+
+python3 py_GSB2DAT_V1.py -r1 /data/legacy_data/raw_data/07feb2016/node33R1/B1937+21.070216.1280.30ns.pavb.raw.Pol-R1.dat -r2 /data/legacy_data/raw_data/07feb2016/node33R2/B1937+21.070216.1280.30ns.pavb.raw.Pol-R2.dat -l1 /data/legacy_data/raw_data/07feb2016/node34L1/B1937+21.070216.1280.30ns.pavb.raw.Pol-L1.dat -l2 /data/legacy_data/raw_data/07feb2016/node34L2/B1937+21.070216.1280.30ns.pavb.raw.Pol-L2.dat -t /data/legacy_data/raw_data/07feb2016/node33R1/B1937+21.070216.1280.30ns.pavb.raw.timestamp -S B1937+21 -n 512 -f 1280.0 -o B1937+21.070216.1280
+
+"""
+import numpy as np
+import astropy.units as u
+from baseband import gsb
+import argparse
+
+# Instantiate the parser
+parser = argparse.ArgumentParser(description='pyGSB2DAT converts GSB spectrum data to Timeseries data')
+parser.add_argument('-r1', type=str, help=' RCP data file 1 ')
+parser.add_argument('-r2', type=str, help=' RCP data file 2 ')
+parser.add_argument('-l1', type=str, help=' LCP data file 1 ')
+parser.add_argument('-l2', type=str,  help=' LCP data file 2 ')
+parser.add_argument('-t', type=str,  help=' Timestamp data file ')
+parser.add_argument('-S', type=str,  help=' Pulsar Name ')
+parser.add_argument('-n', type=int,  default='512',  help=' Spectrum Channals ')
+parser.add_argument('-f', type=float,  help=' Center frequency ')
+parser.add_argument('-o', type=str,  help=' Outfile Name ')
+
+args = parser.parse_args()
+
+
+R1_data_file 		= str(args.r1) # '/data/legacy_data/raw_data/07feb2016/node33R1/B1937+21.070216.1280.30ns.pavb.raw.Pol-R1.dat'
+R2_data_file 		= str(args.r2) #'/data/legacy_data/raw_data/07feb2016/node33R2/B1937+21.070216.1280.30ns.pavb.raw.Pol-R2.dat'
+L1_data_file   		= str(args.l1) # '/data/legacy_data/raw_data/07feb2016/node34L1/B1937+21.070216.1280.30ns.pavb.raw.Pol-L1.dat'
+L2_data_file      	= str(args.l2) #'/data/legacy_data/raw_data/07feb2016/node34L2/B1937+21.070216.1280.30ns.pavb.raw.Pol-L2.dat'
+Timestamp_file 	        = str(args.t) #"/data/legacy_data/raw_data/07feb2016/node33R1/B1937+21.070216.1280.30ns.pavb.raw.timestamp" 
+SRC_name		= str(args.S)
+Nchan                	= int(args.n) # int(NFFT/2)
+Center_freq		= float(args.f) 
+out_data_file 		= str(args.o)+'.dat'#SAMPLE_GSB_PHASED_HEADER.rsplit('/')[-1].rsplit('.',1)[0]+'.dat'
+out_HDR_file		= str(args.o)+'.hdr'
+#exit(0)
+
+Npol = 2
+NFFT = Nchan*2
+scale = 32
+phased_samples_per_frame = int(2**23/(Npol*Nchan)) # 2**3 #
+max_frams_to_read = 100
+
+
+SAMPLE_GSB_PHASED = ((L1_data_file, L2_data_file ), ( R1_data_file, R2_data_file))
+SAMPLE_GSB_PHASED_HEADER = Timestamp_file
+
+fh_ph = gsb.open(SAMPLE_GSB_PHASED_HEADER, mode='rs', raw=SAMPLE_GSB_PHASED, samples_per_frame=phased_samples_per_frame)
+
+# -------------------------------------------------------- HDR section --------------------------------------------------------------
+
+HDR_VERSION 	= '1.0'
+BW    		= float(16.66666) #np.float64(np.array(fh_ph.info.bandwidth))
+FREQ  		= float(Center_freq)
+TELESCOPE 	= 'GMRT'
+RECEIVER 	= 'GSB'
+INSTRUMENT 	= 'GSB'
+SOURCE  	= SRC_name
+MODE  		= 'PSR'
+NBIT 		= int(fh_ph.bps)
+NCHAN 		= 1
+NDIM  		= 1 # real-1, complex-2
+NPOL 		= int(fh_ph.sample_shape.nthread)
+NDAT 		= int(fh_ph.size)
+OBS_OFFSET 	= 0
+UTC_START  	= str(np.array(fh_ph.start_time.utc.datetime64, dtype='datetime64[s]')).rsplit('T')
+UTC_START 	= str(UTC_START[0]+'-'+UTC_START[1])
+PICOSECONDS 	= int((np.array(fh_ph.header0.time.datetime64, dtype='datetime64[ns]') - np.array(fh_ph.header0.time.datetime64, dtype='datetime64[s]'))*1000)
+TSAMP 		= float(1/(BW*2))
+RESOLUTION 	= 2
+
+HDR_keys = ['HDR_VERSION', 'BW', 'FREQ', 'TELESCOPE', 'RECEIVER', 'INSTRUMENT', 'SOURCE', 'MODE', 'NBIT', 'NCHAN', 'NDIM', 'NPOL', 'NDAT', 'OBS_OFFSET', 'UTC_START', 'PICOSECONDS', 'TSAMP', 'RESOLUTION']
+
+# open the file in write mode
+obj_file = open(out_HDR_file, "w")
+
+for key in HDR_keys:
+    print(key, "       \t", globals()[key], file=obj_file)
+
+# closing the file
+obj_file.close()
+
+# -------------------------------------------------------- HDR section --------------------------------------------------------------
+
+
+fw       =  open(out_data_file, 'wb')
+
+while fh_ph.tell() < fh_ph.shape[0]:
+    
+    if (fh_ph.tell()+max_frams_to_read*NFFT*Npol) < fh_ph.shape[0]:
+        frams_to_read = max_frams_to_read
+        
+    else:
+        frams_to_read = 1
+
+    dataframe = fh_ph.read(frams_to_read)
+    
+    t_series  = np.zeros((frams_to_read,NFFT*2) , dtype=np.int8)
+    
+    for frame_idx in range(frams_to_read):
+        
+        pol_l_spec = dataframe[frame_idx][0]
+        pol_r_spec = dataframe[frame_idx][1]
+
+        pol_l_conj_spec = np.zeros(NFFT , dtype=np.complex64)
+        pol_r_conj_spec = np.zeros(NFFT , dtype=np.complex64)
+
+        pol_l_conj_spec[:Nchan] = pol_l_spec
+        pol_l_conj_spec[Nchan+1:] = np.flip(np.conj(pol_l_spec))[:-1]
+        pol_r_conj_spec[:Nchan] = pol_r_spec
+        pol_r_conj_spec[Nchan+1:] = np.flip(np.conj(pol_r_spec))[:-1]
+    
+        pol_l_conj_spec[0] = complex(pol_l_conj_spec[0].real , 0 ) 
+        pol_r_conj_spec[0] = complex(pol_r_conj_spec[0].real , 0 )  
+
+        pol_l_timeseries = np.fft.ifft(pol_l_conj_spec*scale)
+        pol_r_timeseries = np.fft.ifft(pol_r_conj_spec*scale)
+
+        t_series[frame_idx][0::2] = np.int_(pol_r_timeseries.real)
+        t_series[frame_idx][1::2] = np.int_(pol_l_timeseries.real)
+    
+    fw.write(t_series)
+    
+    print(str(np.round(((fh_ph.tell()/fh_ph.shape[0]) * 100), decimals=2))+ '  Percentage over' , end='\r')
+fh_ph.close()
+fw.close()
